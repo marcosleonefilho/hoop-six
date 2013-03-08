@@ -55,7 +55,7 @@ else:
                 return 1 << 31
         try:
             len(X())
-        except OverflowError:
+        except (OverflowError, TypeError):
             # 32-bit
             MAXSIZE = int((1 << 31) - 1)
         else:
